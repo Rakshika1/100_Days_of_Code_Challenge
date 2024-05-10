@@ -1,0 +1,76 @@
+# https://leetcode.com/problems/check-if-two-string-arrays-are-equivalent/
+class Solution:
+    def arrayStringsAreEqual(self, word1: List[str], word2: List[str]) -> bool:
+        word3 = "".join(word1)
+        word4 = "".join(word2)
+        if word3==word4:
+            return True
+        else:
+            return False
+# https://leetcode.com/problems/create-target-array-in-the-given-order/
+class Solution:
+    def createTargetArray(self, nums: List[int], index: List[int]) -> List[int]:
+        arr = []
+        for i in range(len(nums)):
+            arr.insert(index[i],nums[i])
+        return arr
+
+# https://leetcode.com/problems/left-and-right-sum-differences/
+class Solution:
+    def leftRightDifference(self, nums: List[int]) -> List[int]:
+        leftsum = []
+        rightsum = []
+        sum1 =0
+        for i in range(len(nums)):
+            l1 = sum(nums[0:i])
+            # print(l1)
+            leftsum.append(l1)
+            l2 = sum(nums[i+1:])
+            # print(l2)
+            rightsum.append(l2)
+        print(rightsum)
+        print(leftsum)
+        result = [abs(x -y) for x, y in zip(leftsum, rightsum)]
+        return result
+
+# https://leetcode.com/problems/decode-xored-array/
+class Solution:
+    def decode(self, encoded: List[int], first: int) -> List[int]:
+        arr1 = [first]
+        for i in range(len(encoded)):
+            # p = encoded[i] ^ first
+            xo = encoded[i] ^ (arr1[-1])
+            arr1.append(xo)
+            # print(xo)
+        print(arr1)
+        return arr1
+
+# https://leetcode.com/problems/sum-of-values-at-indices-with-k-set-bits/
+class Solution:
+    def sumIndicesWithKSetBits(self, nums: List[int], k: int) -> int:
+        sum =0
+        for i in range(len(nums)):
+            decimal  = i
+            binary = bin(decimal)[2:]
+            # print(binary)
+            c = binary.count("1")
+            # print(c)
+            if (c==k):
+                sum = sum + nums[i]
+                # print(sum)
+        return sum
+    
+            
+            
+            
+
+
+        
+
+
+
+        
+
+
+
+        
