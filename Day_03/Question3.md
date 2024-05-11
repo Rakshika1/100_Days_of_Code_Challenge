@@ -2,6 +2,18 @@
 
 ## Leetcode Question 03:-
 
+code :-
+```python
+class Solution:
+    def reverseString(self, s: List[str]) -> None:
+        """
+        Do not return anything, modify s in-place instead.
+        """
+        s.reverse()
+        print(s)
+      
+```
+
 
 ## Usage/Examples
 Followings are the String Methods which are very important.
